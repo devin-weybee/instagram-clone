@@ -15,7 +15,7 @@ const Sidebar = ({ openCreatePostModal }) => {
   const [showCreatePostModal, setShowCreatePostModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const username = useSelector((store) => store.user.user.username);
+  const username = useSelector((store) => store.user?.user?.username);
   const profile = useSelector((state) => state.profile.profile);
   const myProfile = useFetchProfile();
 
