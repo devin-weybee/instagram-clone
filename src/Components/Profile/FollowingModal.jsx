@@ -97,7 +97,7 @@ const FollowingModal = ({ profile, onClose }) => {
               <div
                 key={user._id}
                 className="flex items-center gap-4 p-3 hover:bg-gray-900 cursor-pointer"
-                onClick={() => handleUserClick(user.username)}
+                onClick={() => handleUserClick(user?.username)}
               >
                 <img
                   src={
@@ -107,7 +107,7 @@ const FollowingModal = ({ profile, onClose }) => {
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-semibold">{user.username}</p>
+                  <p className="font-semibold">{user?.username}</p>
                   <p className="text-gray-400 text-sm">
                     {user.firstName} {user.lastName}
                   </p>

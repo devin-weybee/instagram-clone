@@ -49,7 +49,7 @@ const UserContent = ({ profile, setIsEditing, totalPosts }) => {
             onClick={handleClick}
             className="bg-gray-700 p-2 rounded-md text-white hover:bg-gray-700"
           >
-            {user.username == profile?.account?.username
+            {user?.username == profile?.account?.username
               ? "Edit Profile"
               : isFollowing
               ? "Unfollow"
