@@ -120,7 +120,7 @@ const Login = () => {
             Forgot Password ?
           </button>
           <p className="text-white text-center mt-[15%]">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}$nbsp;
+            {isLogin ? "Don't have an account?" : "Already have an account?"};
             <button
               className="text-blue-600 cursor-pointer"
               onClick={handleIsSignIn}
