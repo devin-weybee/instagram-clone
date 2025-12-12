@@ -1,4 +1,4 @@
-HOSTED URL : https://instagram-clone-psi-snowy.vercel.app/login
+HOSTED URL : https://instagram-clone-psi-snowy.vercel.app
 
 
 
