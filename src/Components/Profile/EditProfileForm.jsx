@@ -156,25 +156,27 @@ const EditProfileForm = ({ profile, setIsEditing }) => {
             value={formData.countryCode}
             onChange={handleChange}
             className="w-24 p-2 border rounded"
-          />
+            placeholder="+91"
+            />
           <input
             type="text"
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
             className="flex-1 p-2 border rounded"
+            placeholder="Phone Number"
           />
         </div>
 
         <div className="flex gap-3 mt-4">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Save
           </button>
 
           <button
             type="button"
             onClick={() => setIsEditing(false)}
-            className="bg-gray-700 px-4 py-2 rounded"
+            className="bg-gray-700 px-4 py-2 rounded cursor-pointer"
           >
             Cancel
           </button>

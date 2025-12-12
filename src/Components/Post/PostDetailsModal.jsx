@@ -43,7 +43,7 @@ const PostDetailsModal = ({ imageFiles, closeModal, afterPost }) => {
       <div className="bg-black w-[500px] rounded-xl shadow-lg p-5 relative">
         <button
           onClick={closeModal}
-          className="absolute right-4 top-4 text-gray-400 hover:text-white"
+          className="cursor-pointer absolute right-4 top-4 text-gray-400 hover:text-white"
         >
           <IoClose size={28} />
         </button>
@@ -70,7 +70,7 @@ const PostDetailsModal = ({ imageFiles, closeModal, afterPost }) => {
 
         <button
           onClick={handleSharePost}
-          className="mt-4 w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          className="cursor-pointer mt-4 w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
         >
           Share Post
         </button>

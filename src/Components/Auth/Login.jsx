@@ -6,6 +6,7 @@ import { setUser } from "../../Redux/Reducers/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  console.log("login")
   const [isLogin, setIsLogin] = useState(true);
   const username = useRef();
   const password = useRef();

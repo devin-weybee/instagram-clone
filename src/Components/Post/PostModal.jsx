@@ -4,13 +4,16 @@ import axios from "axios";
 import PostComments from "./PostComments";
 import PostModalFooter from "./PostModalFooter";
 import { API_BASE_URL } from "../../Utils/Constants";
+import { AiOutlineDelete } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
-const PostModal = ({ post, onClose }) => {
-  console.log(post);
+const PostModal = ({ post, onClose, onDelete }) => {
   const [comments, setComments] = useState([]);
   const [isLiked, setIsLiked] = useState(post.isLiked);
   const [likes, setLikes] = useState(post.likes);
   const [loading, setLoading] = useState(true);
+
+  const userID = useSelector((store) => store.user.user._id);
 
   const fetchComments = async () => {
     try {
@@ -70,6 +73,20 @@ const PostModal = ({ post, onClose }) => {
     }
   };
 
+  const handleDeletePost = async () => {
+    try {
+      await axios.delete(`${API_BASE_URL}/social-media/posts/${post._id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
+      if (onDelete) onDelete(post._id);
+      onClose();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     fetchComments();
   }, [post._id]);
@@ -98,12 +115,20 @@ const PostModal = ({ post, onClose }) => {
               {post.author.account.username}
             </span>
 
-            <button
-              className="ml-auto text-xl cursor-pointer"
-              onClick={onClose}
-            >
-              ✖
-            </button>
+            <div className="ml-auto flex items-center gap-4">
+              {/* Show delete only if post belongs to the logged-in user */}
+              {post.author.account._id === userID && (
+                <AiOutlineDelete
+                  size={22}
+                  className="cursor-pointer hover:text-red-500"
+                  onClick={handleDeletePost}
+                />
+              )}
+
+              <button className="text-xl cursor-pointer" onClick={onClose}>
+                ✖
+              </button>
+            </div>
           </div>
 
           <div className="p-4 border-b border-gray-800 text-sm">

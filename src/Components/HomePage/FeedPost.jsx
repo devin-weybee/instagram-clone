@@ -40,7 +40,7 @@ const FeedPost = ({ post, onCommentClick }) => {
     <div className="bg-black border border-gray-800 rounded-lg text-white">
       <div className="flex items-center gap-3 p-4">
         <img
-          src={post.author.account.avatar.url}
+          src={post.author.coverImage.url}
           alt="avatar"
           className="w-10 h-10 rounded-full"
         />

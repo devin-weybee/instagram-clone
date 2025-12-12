@@ -6,6 +6,7 @@ import PostList from "./PostList";
 import UserContent from "./UserContent";
 import { useParams } from "react-router-dom";
 import useFetchPostList from "../../Helper/useFetchPostList";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -13,6 +14,8 @@ const Profile = () => {
   const { username } = useParams();
 
   const { posts, loading } = useFetchPostList();
+  const updatedProfile = useSelector((store) => store.profile.profile);
+
   const fetchProfileData = async () => {
     try {
       const reponse = await axios.get(
@@ -29,11 +32,23 @@ const Profile = () => {
     }
   };
 
+  // useEffect(() => {
+  //   if (username != profile?.account?.username) {
+  //     fetchProfileData();
+  //   }
+  // }, [profile, username]);
+
+  // Sync profile state with Redux after edit
   useEffect(() => {
-    if (username != profile?.account?.username) {
-      fetchProfileData();
+    if (updatedProfile) {
+      setProfile(updatedProfile);
     }
-  }, [profile, username]);
+  }, [updatedProfile]);
+
+  // Fetch only when username changes
+  useEffect(() => {
+    fetchProfileData();
+  }, [username]);
 
   if (isEditing) {
     return <EditProfileForm profile={profile} setIsEditing={setIsEditing} />;

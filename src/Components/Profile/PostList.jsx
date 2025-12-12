@@ -4,10 +4,15 @@ import { API_BASE_URL } from "../../Utils/Constants";
 import PostCard from "../Post/PostCard";
 import PostModal from "../Post/PostModal";
 
-const PostList = ({ posts, loading }) => {
+const PostList = ({ posts: initialPosts, loading }) => {
   const [selectedPostId, setSelectedPostId] = useState(null);
+  const [posts, setPosts] = useState(initialPosts);
 
   const selectedPost = posts.find((p) => p._id === selectedPostId);
+
+  useEffect(() => {
+    setPosts(initialPosts);
+  }, [initialPosts]);
 
   if (loading) {
     return (
@@ -34,6 +39,10 @@ const PostList = ({ posts, loading }) => {
         <PostModal
           post={selectedPost}
           onClose={() => setSelectedPostId(null)}
+          onDelete={(deletedId) => {
+            setSelectedPostId(null);
+            setPosts((prev) => prev.filter((p) => p._id !== deletedId));
+          }}
         />
       )}
     </div>

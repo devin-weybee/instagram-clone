@@ -47,7 +47,7 @@ const UserContent = ({ profile, setIsEditing, totalPosts }) => {
 
           <button
             onClick={handleClick}
-            className="bg-gray-700 p-2 rounded-md text-white hover:bg-gray-700"
+            className="bg-gray-700 p-2 rounded-md text-white hover:bg-gray-700 cursor-pointer"
           >
             {user?.username == profile?.account?.username
               ? "Edit Profile"
@@ -58,20 +58,20 @@ const UserContent = ({ profile, setIsEditing, totalPosts }) => {
         </div>
 
         <div className="flex justify-start items-center gap-5">
-          <p className="text-gray-600">Posts: {totalPosts}</p>
+          <p className="text-gray-600">Posts {totalPosts}</p>
 
           <p
             className="text-gray-600 cursor-pointer hover:text-white"
             onClick={() => setShowFollowers(true)}
           >
-            Followers: {profile?.followersCount}
+            Followers {profile?.followersCount}
           </p>
 
           <p
             className="text-gray-600 cursor-pointer hover:text-white"
             onClick={() => setShowFollowing(true)}
           >
-            Following: {profile?.followingCount}
+            Following {profile?.followingCount}
           </p>
         </div>
 

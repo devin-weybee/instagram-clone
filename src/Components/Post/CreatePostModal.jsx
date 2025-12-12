@@ -41,7 +41,7 @@ const CreatePostModal = ({ closeModal, goNext }) => {
       >
         <button
           onClick={closeModal}
-          className="absolute right-4 top-4 text-gray-400 hover:text-white"
+          className="cursor-pointer absolute right-4 top-4 text-gray-400 hover:text-white"
         >
           <IoClose size={28} />
         </button>
@@ -49,7 +49,7 @@ const CreatePostModal = ({ closeModal, goNext }) => {
         {previewImages.length > 0 && (
           <button
             onClick={() => goNext(imageFiles)}
-            className="absolute right-4 top-4 mr-[60px] px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            className="cursor-pointer absolute right-4 top-4 mr-[60px] px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
             Next →
           </button>
