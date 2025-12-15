@@ -32,20 +32,12 @@ const Profile = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (username != profile?.account?.username) {
-  //     fetchProfileData();
-  //   }
-  // }, [profile, username]);
-
-  // Sync profile state with Redux after edit
   useEffect(() => {
     if (updatedProfile) {
       setProfile(updatedProfile);
     }
   }, [updatedProfile]);
 
-  // Fetch only when username changes
   useEffect(() => {
     fetchProfileData();
   }, [username]);

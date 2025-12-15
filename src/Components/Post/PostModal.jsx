@@ -116,7 +116,6 @@ const PostModal = ({ post, onClose, onDelete }) => {
             </span>
 
             <div className="ml-auto flex items-center gap-4">
-              {/* Show delete only if post belongs to the logged-in user */}
               {post.author.account._id === userID && (
                 <AiOutlineDelete
                   size={22}

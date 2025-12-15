@@ -59,7 +59,7 @@ const Home = () => {
   }, [page]);
 
   return (
-    <div className="max-w-lg mx-auto mt-10 space-y-10">
+    <div className="max-w-xs md:max-w-sm lg:max-w-md mx-auto mt-10 space-y-10">
       {allPosts.map((post) => (
         <FeedPost
           key={post._id}
