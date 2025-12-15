@@ -30,16 +30,16 @@ const UserContent = ({ profile, setIsEditing, totalPosts }) => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center gap-10 p-5 text-white">
+    <div className="w-full flex justify-center mx-auto gap-10 p-5 text-white md:w-full">
       <div className="relative">
         <img
-          className="h-40 w-40 rounded-full object-cover"
+          className="h-38 w-38 md:h-40 md:w-40 rounded-full object-cover"
           src={profile?.coverImage?.url}
           alt="coverimage"
         />
       </div>
 
-      <div className="text-center space-y-2 w-80">
+      <div className="space-y-2 w-full md:w-80">
         <div className="flex justify-between">
           <h6 className="text-xl font-bold text-left">
             {profile?.account?.username}
@@ -57,7 +57,7 @@ const UserContent = ({ profile, setIsEditing, totalPosts }) => {
           </button>
         </div>
 
-        <div className="flex justify-start items-center gap-5">
+        <div className="flex justify-between items-center">
           <p className="text-gray-600">Posts {totalPosts}</p>
 
           <p

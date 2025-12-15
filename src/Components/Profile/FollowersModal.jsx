@@ -71,7 +71,7 @@ const FollowersModal = ({ profile, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-black text-white w-[40%] max-h-[500px] rounded-xl overflow-hidden shadow-xl"
+        className="bg-black text-white w-96 max-h-[500px] rounded-xl overflow-hidden shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between p-4 border-b border-gray-800">

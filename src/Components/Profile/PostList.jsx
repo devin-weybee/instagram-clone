@@ -22,7 +22,7 @@ const PostList = ({ posts: initialPosts, loading }) => {
 
   return (
     <div className="mt-10">
-      <div className="grid grid-cols-3 gap-1 max-w-4xl mx-auto overflow-y-auto h-full">
+      <div className="grid grid-cols-3 gap-1 mx-auto w-full max-w-[340px] sm:max-w-[420px] md:max-w-[600px] lg:max-w-[850px]">
         {posts.map((post) => (
           <div key={post._id} className="aspect-square">
             <PostCard

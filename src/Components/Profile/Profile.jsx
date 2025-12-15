@@ -47,15 +47,18 @@ const Profile = () => {
   }
 
   return (
-    <div className="mx-auto">
-      {profile && (
-        <UserContent
-          profile={profile}
-          setIsEditing={setIsEditing}
-          totalPosts={posts.length}
-        />
-      )}
-      <PostList posts={posts} loading={loading} />
+    <div className="w-full flex justify-center">
+      <div className="w-full max-w-5xl px-4">
+        {profile && (
+          <UserContent
+            profile={profile}
+            setIsEditing={setIsEditing}
+            totalPosts={posts.length}
+          />
+        )}
+
+        <PostList posts={posts} loading={loading} />
+      </div>
     </div>
   );
 };
